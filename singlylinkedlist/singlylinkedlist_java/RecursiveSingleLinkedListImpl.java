@@ -101,5 +101,13 @@ public class RecursiveSingleLinkedListImpl<T> implements LinkedList<T> {
     public void setNext(RecursiveSingleLinkedListImpl<T> next) {
         this.next = next;
     }
+    public void addFirst(T data) {               // Function to add data at starting of the list
+		RecursiveSingleLinkedListImpl node = new RecursiveSingleLinkedListImpl(data, this.head);
+		this.head = node;
+		if (this.isEmpty()) {
+			this.tail = node;
+		}
+		this.size++;
+	}
 
 }
